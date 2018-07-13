@@ -1,0 +1,9 @@
+Package: com.ducksrepo.mastertweak
+Name: Master Tweak
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: ONLY DARK KEYBOARD AND FOLDERS!
+Maintainer: Turnt Ducky
+Author: Turnt Ducky
+Section: Tweaks
