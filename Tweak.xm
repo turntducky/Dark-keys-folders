@@ -3,38 +3,42 @@
 static NSString *nsDomainString = @"com.ducksrepo.mastertweakprefs";
 static NSString *nsNotificationString = @"com.ducksrepo.mastertweak/preferences.changed";
 
-static bool darkkeyboard;
-static bool darkfolders;
+static BOOL darkkeyboard;
+static BOOL darkfolders;
 
 @interface NSUserDefaults (MasterTweak)
 - (id)objectForKey:(NSString *)key inDomain:(NSString *)domain;
 - (void)setObject:(id)value forKey:(NSString *)key inDomain:(NSString *)domain;
 @end
 @interface FBSystemService : NSObject
-	+(id)sharedInstance;
-	-(void)exitAndRelaunch:(BOOL)arg1;
++(id)sharedInstance;
+-(void)exitAndRelaunch:(BOOL)arg1;
 @end
 @interface SpringBoard : NSObject
-	- (void)_relaunchSpringBoardNow;
-	+(id)sharedInstance;
-  -(id)_accessibilityFrontMostApplication;
-  -(void)clearMenuButtonTimer;
+- (void)_relaunchSpringBoardNow;
++(id)sharedInstance;
+-(id)_accessibilityFrontMostApplication;
+-(void)clearMenuButtonTimer;
 @end
 
 //Dark iOS keyboard (system wide)
 %hook UIKBRenderConfig
 - (void)setLightKeyboard:(BOOL)light {
 	if(darkkeyboard){
-		%orig(NO);
-	} else {%orig(YES); }
+	    %orig(NO);
+	} else {
+	    %orig(light); //could either be YES or NO
+	}
 }
 %end
 
 %hook UIDevice
 - (long long)_keyboardGraphicsQuality {
 	if(darkkeyboard){
-		return 10;
-	} else {return 100; }
+           return 10;
+	} else {
+	   return %orig; 
+	}
 }
 %end
 //End Dark Keyboard
@@ -64,12 +68,12 @@ static bool darkfolders;
 %hook SBFolderBackgroundView
 
 - (void)layoutSubviews {
+        %orig;
 	if(darkfolders){
-    %orig;
 
     UIView *tintView = [self valueForKey:@"_tintView"];
     tintView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.6];
-	} else {%orig; }
+	}
 }
 
 %end
