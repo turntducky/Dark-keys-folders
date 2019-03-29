@@ -6,32 +6,38 @@
 	<array>
 	<dict>
 		<dict>
-		  <key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.ducksrepo.mastertweakprefs</string>
-			<key>key</key>
-			<string>darkkeyboard</string>
-			<key>label</key>
-			<string>Dark Keyboard</string>
-			<key>PostNotificaton</key>
-		  <string>com.ducksrepo.mastertweak/preferences.changed</string>
+    			<key>cell</key>
+    			<string>PSSwitchCell</string>
+    			<key>default</key>
+    			<false/>
+    			<key>defaults</key>
+    			<string>com.ducksrepo.mastertweak</string>
+    			<key>key</key>
+    			<string>darkkeyboard</string>
+    			<key>label</key>
+    			<string>Dark Keyboard</string>
+    			<key>PostNotificaton</key>
+    			<string>com.ducksrepo.mastertweak.updated</string>
 		</dict>
 		<dict>
-		  <key>cell</key>
-			<string>PSSwitchCell</string>
-			<key>default</key>
-			<false/>
-			<key>defaults</key>
-			<string>com.ducksrepo.mastertweakprefs</string>
-			<key>key</key>
-			<string>darkfolders</string>
-			<key>label</key>
-			<string>Dark Springboard Folders</string>
-			<key>PostNotificaton</key>
-		  <string>com.ducksrepo.mastertweak/preferences.changed</string>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Enables dark folders on the homescreen.</string>
+		</dict>
+		<dict>
+    			<key>cell</key>
+    			<string>PSSwitchCell</string>
+    			<key>default</key>
+    			<false/>
+    			<key>defaults</key>
+    			<string>com.ducksrepo.mastertweak</string>
+    			<key>key</key>
+    			<string>darkfolders</string>
+   			<key>label</key>
+    			<string>Dark Springboard Folders</string>
+    			<key>PostNotificaton</key>
+    			<string>com.ducksrepo.mastertweak.updated</string>
 		</dict>
 		<dict>
       			<key>cell</key>
