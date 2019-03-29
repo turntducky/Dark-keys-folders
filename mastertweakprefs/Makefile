@@ -7,7 +7,6 @@ MasterTweakPrefs_FILES = $(wildcard *.m)
 MasterTweakPrefs_INSTALL_PATH = /Library/PreferenceBundles
 MasterTweakPrefs_FRAMEWORKS = UIKit
 MasterTweakPrefs_PRIVATE_FRAMEWORKS = Preferences
-MasterTweakPrefs_EXTRA_FRAMEWORKS += Cephei CepheiPrefs
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 
