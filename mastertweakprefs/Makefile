@@ -1,12 +1,13 @@
 DEBUG = 0
-ARCHS = armv7 arm64
+ARCHS = arm64 arm64e
 include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = MasterTweakPrefs
-MasterTweakPrefs_FILES = DTTRootListController.m
+MasterTweakPrefs_FILES = $(wildcard *.m) 
 MasterTweakPrefs_INSTALL_PATH = /Library/PreferenceBundles
 MasterTweakPrefs_FRAMEWORKS = UIKit
 MasterTweakPrefs_PRIVATE_FRAMEWORKS = Preferences
+MasterTweakPrefs_EXTRA_FRAMEWORKS += Cephei CepheiPrefs
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 
