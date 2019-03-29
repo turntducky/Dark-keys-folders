@@ -5,7 +5,3 @@
  BOOL shouldReload;
 }
 @end
-
-@interface DTCRootListController : PSListController
-
-@end
